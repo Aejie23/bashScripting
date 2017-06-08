@@ -1,0 +1,84 @@
+#! /bin/bash
+
+$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")
+
+echo "Enter critical threshold:"
+read critical
+ 
+echo "Enter warning threshold:"
+read warning
+
+echo "Enter Email address:"
+read email
+
+
+case $totalMem in
+
+
+$critical < $warning
+
+echo "critical shoud be greater than warning threshold"
+
+$critical = [3-5]*) 
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+$warning = [3-5]*)
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+$warning = 1[1-9])
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+$warning = 1[1-9])
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+$warning = 2[1-9])
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+$warning = 2[1-9])
+
+echo "$totalMem= (free |grep Mem: |awk '{ print $2 }'|cut -d "%")"
+
+
+
+#----------------------------
+
+$critical = [2])
+
+echo "$totalMem %, is greater than or equal to crirical threshold "
+
+exit
+
+$warning = [2])
+echo "$totalMem %, is greater than or equal to crirical threshold "
+
+exit
+
+$critical = [1])
+echo "$totalMem %, is greater than or equal to warning threshold but less than the crirtical threshold "
+
+exit
+$warning = [1])
+echo "$totalMem %, is greater than or equal to warning threshold but less than the crirtical threshold "
+
+exit
+$warning = [0])
+echo "$totalMem %, is less than warning threshold "
+
+exit
+$critical = [0])
+
+echo "$totalMem %, is less than warning threshold "
+
+exit
+#------------------------------------
+
+
+
+
+	
+
