@@ -1,7 +1,11 @@
-#!bin/bash
+#! /bin/bash
 
+#a script to check memory usage
+
+#prints total free memory usages
 total_Mem= $(free |grep Mem: |awk '{ print $2 }'| grep % | grep -v Use | sort -n |cut -d '%' -f1)
 
+#sssss
 while getopts :c:w:z: $total_Mem; do
 	case $total_Mem in
 		
@@ -20,5 +24,5 @@ while getopts :c:w:z: $total_Mem; do
 		?) echo "Please enter required parameter, from 0-100"
 
 	esac
-
+	
 done
