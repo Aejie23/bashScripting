@@ -1,6 +1,8 @@
 class puppet{
 
   	include ::wget
+	timezone => 'PHT',
+	
 	$pack = ['vim','curl','git']
   		package { $pack: ensure => 'installed' }
 
