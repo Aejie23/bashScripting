@@ -1,8 +1,6 @@
 class puppet{
 
-	
   	include ::wget
-
 	$pack = ['vim','curl','git']
   		package { $pack: ensure => 'installed' }
 
@@ -13,16 +11,12 @@ class puppet{
 
 	exec { 'mkdir':
     	command => 'mkdir /home/monitor/scripts/memory_check',
-	path    => '/usr/local/bin/:/bin/',
-	}
-
-
+	path    => '/usr/local/bin/:/bin/',}
+	
     		wget::fetch { 'https://raw.githubusercontent.com/Aejie23/bashScripting/master/memory_check.sh':
     		destination => '/home/monitor/scripts/memory_check',
     		timeout     => 15,
-    		verbose     => true,
-		}
-
+    		verbose     => true,}
 	
 	file { '/home/monitor/src/':
     	ensure	=> 'directory',}
@@ -34,9 +28,8 @@ class puppet{
 
 	cron { 'my_memory_check':
   	command => '/home/monitor/src/my_memory_check',
-  	user    => 'monitor,
+  	user    => 'monitor',
   	hour    => 0,
   	minute  => 10,}
-
-
 }
+
