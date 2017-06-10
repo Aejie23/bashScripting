@@ -8,9 +8,9 @@ top_mem= $(top |grep Mem: | awk '{print $3}' | grep % | grep -v Use | sort -n | 
 TIME=$(date +%k%M)
 DAY=`/bin/date +%Y%m%d`
 
-#sssss
-while getopts :c:w:e $total_Mem; do
-	case $total_Mem in
+#checking of usage memory using getops
+while getopts ":c:w:e:" opt "${total_Mem[@]}"; do
+	case $opt in
 		
 		c) [\("$total_Mem" -ge "90"] && \ ("$total_Mem" -lt "90")] 
 		
@@ -28,6 +28,7 @@ while getopts :c:w:e $total_Mem; do
 		
 		;;
 		
-		?) echo "Please enter required parameter, from 0-100"
+		:) echo "Please enter required parameter, from 0-100"
+		;;
 	esac
 done
