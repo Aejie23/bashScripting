@@ -12,17 +12,17 @@ DAY=`/bin/date +%Y%m%d`
 while getopts ":c:w:e:" opt "${total_Mem[@]}"; do
 	case $opt in
 		
-		c) [\("$total_Mem" -ge "90"] && \ ("$total_Mem" -lt "90")] 
+		c) [ $total_Mem -ge 90 -a $total_Mem -lt 90 ] 
 		
 		exit 1
 		;;		
 		
-		w) [\("$total_Mem" -ge "60" ) && \ ("$total_Mem" -lt "60")]
+		w) [ $total_Mem -ge 60 -a $total_Mem -lt 60 ]
 		
 		exit 1
 		;;
 				
-		e) [\("$total_Mem" -ge "90"]
+		e) [ $total_Mem -ge 90 ]
 		
 		echo $top_mem | mail -s " '$DAY' '$TIME' memory check - critical" $OPTARG
 		
